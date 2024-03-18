@@ -1,7 +1,7 @@
 function validateSyntax(){
     let pattern = /^[A-Za-z0-9]+$/;
 let result = ''; // Placeholder for validation result
-
+const dots = document.querySelector('#dot-res');
 // Get the input value from the user
 let input = document.getElementById('petInput').value;
 
@@ -14,11 +14,13 @@ if (input.startsWith('pet_')) {
 
     if (/^\d{4}$/.test(year) && pattern.test(name)) {
         result = 'Valid syntax';
+        dots.style.backgroundColor = 'green'
+
     } else {
         result = 'Invalid syntax';
+        dots.style.backgroundColor = 'red'
+    
     }
-} else {
-    result = 'Invalid syntax';
 }
 
 // Update the result displayed on the webpage
